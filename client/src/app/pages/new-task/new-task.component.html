@@ -1,0 +1,28 @@
+<div class="centered-content">
+  <div class="modal-box">
+    <h1 class="title">Create a new task</h1>
+    <div class="field is-grouped ">
+      <p class="control is-expanded">
+        <input #listTitleInput class="input is-medium" type="text" placeholder="Add a Task Title" (keyup.enter)="createTask(listBodyInput.value, listTitleInput.value)" >
+      </p>
+    </div>
+    <div class="field is-grouped ">
+      <p class="control is-expanded">
+        <input #listBodyInput class="input is-medium" type="text" placeholder="Add a Task Description (optional)" (change)="createTask(listBodyInput.value, listTitleInput.value)">
+      </p>
+    </div>
+      <div class="field is-grouped is-grouped-right">
+        <p class="control">
+          <a class="button is-primary" (click)="createTask(listBodyInput.value, listTitleInput.value)">
+            Create
+          </a>
+        </p>
+        <p class="control">
+          <a class="button is-light" routerLink="">
+            Cancel
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="centered-content">
+  <div class="task-manager-container">
+    <div class="sidebar has-background-white">
+        <h1 class="title has-text-primary">
+          Lists
+        </h1>
+        <div class="list-menu">  
+          <a class="list-menu-item" *ngFor="let list of taskService.lists" [routerLink]="['/lists', list._id]" [routerLinkActive]="['is-active']">
+            <p>{{list.title | titlecase}}</p> 
+            <a (click)="onListDelete(list)" class="button is-pulled-right"><i class="fas fa-trash-alt"></i></a>
+          </a>
+        </div>
+          <button class="button is-primary has-text-white" routerLink="/new-list"> + New List</button>  
+    </div>
+
+    <div class="task-list-container has-background-light">
+      <h1 class="title has-text-primary">
+        Tasks
+      </h1>
+      <!-- Task elements -->
+      <div class="task" *ngFor="let task of taskService.tasks" [ngClass]="{'complete': task.completed, 'extended' : extendItem == task._id }">
+       
+        <p (click)="onTaskClick(task)">Title: {{task.title}}</p>
+        <p class="description" *ngIf="extendItem == task._id" (click)="onTaskClick(task)">Description: {{task.body}}</p>
+        <div class="buttons">
+          <a (click)="onTaskDelete(task)" class="button is-pulled-right"><i class="fas fa-trash-alt"></i></a>
+          <a [routerLink]="['/lists', task._listId, task._id, 'edit-task']" class="button is-pulled-right"><i class="fas fa-edit"></i></a>
+          <a *ngIf="extendItem != task._id" (click)="extendItem = task._id" class="button is-pulled-right"><i class="fas fa-angle-down"></i></a>
+          <a *ngIf="extendItem === task._id" (click)="extendItem = ''" class="button is-pulled-right"><i class="fas fa-angle-up"></i></a>
+        </div>
+      </div>
+    
+      <button *ngIf="listId" class="circle-add-button button is-primary" routerLink="./new-task">
+        <p>+</p>
+      </button>
+
+    </div>
+  </div>
+</div>
