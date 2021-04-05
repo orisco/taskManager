@@ -121,5 +121,5 @@ app.delete("/lists/:listId/tasks/all", (req, res) => {
 const PORT = process.env.PORT || 5001
 
 app.listen(PORT, () => {
-  console.log("running on 2800")
+  console.log("running on " + PORT)
 })
