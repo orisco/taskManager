@@ -3,7 +3,7 @@
 const mongoose = require("mongoose")
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://orisayag:Os6852265@cluster0.1iwcf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true}).then(() => {
+mongoose.connect("mongodb+srv://orisayag:Os6852265@cluster0.1iwcf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true,  useUnifiedTopology: true }).then(() => {
   console.log("connected to db successfully")
 }).catch((e) => {
 console.log("error connecting to db")

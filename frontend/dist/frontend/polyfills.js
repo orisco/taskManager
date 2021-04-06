@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/orisayag/Desktop/task-manager-project/api/frontend/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/orisayag/Desktop/task-manager-project/api/taskManager/frontend/src/polyfills.ts */"hN/g");
 
 
 /***/ }),

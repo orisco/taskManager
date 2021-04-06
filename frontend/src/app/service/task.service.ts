@@ -29,6 +29,7 @@ export class TaskService {
 
 
   public createTask(body: object, listId: string) {
+    console.log(body)
     return this.webReqService.post(`lists/${listId}/tasks`, body )
   }
 
